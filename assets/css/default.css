@@ -1,0 +1,128 @@
+
+:root{
+    --primary:#08c77e;
+    --header:#065537;
+    --body:#324940;
+    --font:#fff;
+    --placeholder:#adadad;
+}
+
+html{
+    background-color: #000;
+
+    margin:0 auto;
+}
+body{
+    margin:0 auto;
+    padding:0;
+    background-color: var(--body);
+    max-width:150mm;
+    width:100%;
+    min-width: 472px;
+}
+*{
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color:var(--font);
+}
+
+a, button, input,  textarea{
+    color:inherit;
+    outline:none;
+    text-decoration: none;
+}
+
+
+a.icon{
+    color: #03b46a;
+    text-decoration: none;
+    font-size: 0.75rem;
+    background:#0002;
+    border-radius:10px;
+    padding:0.5rem;
+    width:5rem;
+    height:5rem;
+    box-shadow:-1px -1px 6px -3px #03b46a, 1px 1px 5px #0008;
+}
+
+.box{
+    border-radius:7px;
+    box-shadow:0 0 12px -4px #0007;
+    background-color: #fff2;
+}
+
+.content-all{
+    padding:1rem;
+    display:grid;
+}
+
+
+#header{
+    background:var(--header);
+    color:var(--primary);
+    padding:0.75rem;
+}
+
+
+.tt2{
+    font-size:1.5rem;
+}
+
+
+
+.celda{
+    /* border-bottom:solid 1pxred; */
+    display:grid;
+    background:#0002;
+    padding:0.2rem;
+    border-radius:5px;
+}
+
+.celda > span{
+    color:var(--placeholder);
+    font-size: 0.85rem;
+}
+
+.celda > input{
+    background:transparent;
+    border-bottom:solid 1px var(--placeholder);
+    border:none;
+    font-size:1rem;
+}
+
+.calc{
+    border-bottom:solid 1px #0002;
+    margin-bottom:2rem;
+}
+
+.color-primary{
+    color:var(--primary);
+}
+
+.result{
+    background:#0002;
+    margin-bottom:2rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-align: center;
+    border:none;
+    border-radius:10px;
+    padding:1rem ;
+}
+
+.result input{
+    background:#fff0;
+    border:none;
+    display:block;
+    margin:0 auto;
+    font-size:1.25rem;
+    padding:0.25rem;
+    text-align:center;
+}
+
+.result span{
+    color:var(--placeholder);
+    font-size: 0.85rem;
+    font-weight: inherit;
+
+}
