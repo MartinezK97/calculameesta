@@ -19,5 +19,7 @@
 /* //Divisiones de grid */
 .gtc-1{grid-template-columns: 1fr;}
 .gtc-2{grid-template-columns: repeat(2, 1fr);}
+.gtc-max-max{grid-template-columns: repeat(2, max-content);}
+.gtc-min-min{grid-template-columns: repeat(2, min-content);}
 .gtc-3{grid-template-columns: repeat(3, 1fr);}
 

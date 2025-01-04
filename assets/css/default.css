@@ -30,6 +30,10 @@ a, button, input,  textarea{
     text-decoration: none;
 }
 
+input{
+    width:100%;
+}
+
 
 a.icon{
     color: #03b46a;
@@ -52,8 +56,9 @@ a.icon{
 .content-all{
     padding:1rem;
     display:grid;
-    max-width:20cm;
     margin:0 auto;
+    /* border:solid 1px red; */
+    max-width: max-content;
 }
 
 
@@ -76,6 +81,8 @@ a.icon{
     background:#0002;
     padding:0.2rem;
     border-radius:5px;
+    width:100%;
+    max-width:100%;
 }
 
 .celda > span{
@@ -136,3 +143,11 @@ a.icon{
     display: grid;
     grid-template-columns: repeat(2,1fr);
 }
+
+
+.fw-4{font-weight:400;}
+.fw-5{font-weight:500;}
+.fw-6{font-weight:600;}
+.fw-7{font-weight:700;}
+.fw-8{font-weight:800;}
+.fw-9{font-weight:900;}
