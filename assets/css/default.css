@@ -4,6 +4,7 @@
     --header:#065537;
     --body:#324940;
     --font:#fff;
+    --footer:#253630;
     --placeholder:#adadad;
 }
 
@@ -125,4 +126,14 @@ a.icon{
     font-size: 0.85rem;
     font-weight: inherit;
 
+}
+
+
+#footer{
+    background:var(--footer);
+    font-size:0.75rem;
+    padding:0.25rem;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
 }
