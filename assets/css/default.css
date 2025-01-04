@@ -10,16 +10,13 @@
 
 html{
     background-color: #000;
-
-    margin:0 auto;
 }
 body{
     margin:0 auto;
     padding:0;
     background-color: var(--body);
-    max-width:150mm;
+    max-width:100%;
     width:100%;
-    min-width: 472px;
 }
 *{
     box-sizing: border-box;
@@ -55,6 +52,8 @@ a.icon{
 .content-all{
     padding:1rem;
     display:grid;
+    max-width:20cm;
+    margin:0 auto;
 }
 
 
