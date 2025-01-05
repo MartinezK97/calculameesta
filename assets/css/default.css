@@ -8,14 +8,12 @@
     --placeholder:#adadad;
 }
 
-html{
-    background-color: #000;
-}
+
 body{
-    margin:0 auto;
+    margin:0;
     padding:0;
     background-color: var(--body);
-    max-width:100%;
+    max-width:100vw;
     width:100%;
 }
 *{
@@ -32,6 +30,7 @@ a, button, input,  textarea{
 
 input{
     width:100%;
+    border:none;
 }
 
 
@@ -58,7 +57,7 @@ a.icon{
     display:grid;
     margin:0 auto;
     /* border:solid 1px red; */
-    max-width: max-content;
+    width: 100%;;
 }
 
 
@@ -73,12 +72,26 @@ a.icon{
     font-size:1.5rem;
 }
 
+.color-placeholder{
+    color:var(--placeholder);
+}
 
+.fz-09{
+    font-size:0.9rem;
+}
+
+.bg-transparent{
+    background:transparent;
+}
+
+.ta-right{
+    text-align:right;
+}
 
 .celda{
     /* border-bottom:solid 1pxred; */
     display:grid;
-    background:#0002;
+    background:#0001;
     padding:0.2rem;
     border-radius:5px;
     width:100%;
@@ -100,6 +113,8 @@ a.icon{
 .calc{
     border-bottom:solid 1px #0002;
     margin-bottom:2rem;
+    max-width:130mm;
+    margin:0 auto 1rem;
 }
 
 .color-primary{
@@ -135,13 +150,23 @@ a.icon{
 }
 
 
-#footer{
+footer{
     background:var(--footer);
     font-size:0.75rem;
     padding:0.25rem;
     text-align: center;
     display: grid;
     grid-template-columns: repeat(2,1fr);
+    margin:0;
+    color:var(--placeholder);
+    width: calc(100vw - 1.2rem);
+    margin-left: -1rem;
+    margin-bottom: -0.75rem;
+}
+
+footer > div{
+    color:var(--placeholder);
+    font-size:0.6rem;
 }
 
 

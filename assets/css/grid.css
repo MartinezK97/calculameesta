@@ -6,6 +6,9 @@
     display:grid;
 }
 
+.border-bm-light{
+    border-bottom: solid 1px #0002;
+}
 
 .gg-10{
     grid-gap:10px;
@@ -23,3 +26,6 @@
 .gtc-min-min{grid-template-columns: repeat(2, min-content);}
 .gtc-3{grid-template-columns: repeat(3, 1fr);}
 
+.fz-2{
+    font-size: 2rem;
+}

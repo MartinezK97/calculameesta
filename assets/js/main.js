@@ -1,4 +1,55 @@
 $(document).ready(function () {
+
+  
+    
+    
+    
+    // Función para calcular la diferencia de días
+     function calculateDaysDifference() {
+      const buyDate = new Date($('#calc_check_value_buy_date').val());
+      const expiredDate = new Date($('#calc_check_value_expired').val());
+      
+      if (!isNaN(buyDate) && !isNaN(expiredDate)) {
+          const diffTime = expiredDate - buyDate;
+          const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); // Conversión a días
+          $('#calc_check_value_days').val(diffDays >= 0 ? diffDays : 0); // No permitir días negativos
+      } else {
+          $('#calc_check_value_days').val(''); // Vaciar el campo si las fechas no son válidas
+      }
+  }
+
+  // Función para calcular el valor nominal del cheque
+  function calculateCheckValue() {
+      const receiveValue = parseFloat($('#calc_check_value_get').val());
+      const discountRate = parseFloat($('#monthly_rate').val());
+      const days = parseInt($('#calc_check_value_days').val(), 10);
+
+      if (!isNaN(receiveValue) && receiveValue > 0 && !isNaN(discountRate) && !isNaN(days) && days > 0) {
+          const dailyRate = discountRate / 30; // Aproximación de días en un mes
+          const nominalValue = receiveValue * Math.pow((1 + dailyRate / 100), days);
+          $('#calc_check_value_result').val(`$${nominalValue.toFixed(2)}`);
+      } else {
+          $('#calc_check_value_result').val('$0'); // Si faltan valores o son inválidos
+      }
+  }
+
+  // Escuchar los cambios en las fechas
+  $('#calc_check_value_buy_date, #calc_check_value_expired').on('change', calculateDaysDifference);
+
+  // Escuchar cambios en el rango y calcular el valor nominal
+  $('#dto, #calc_check_value_get, #calc_check_value_days').on('input', calculateCheckValue);
+
+  $("#dto").on("input", function () {
+    const value = $(this).val();
+    $("#check_value_rate_monthly").val(num(value))
+    var y = num(12 * value)
+    $("#check_value_rate_year").val(y)
+    // console.log("Valor del input range:", value);
+    // Aquí puedes agregar el código que necesites para manejar el valor del input range
+  });
+
+
+
     function calculateTIR() {
       // Obtener valores de entrada
       const valor = parseFloat($("#calc_tir_value").val()) || 0; // Valor nominal
@@ -67,7 +118,7 @@ $(document).ready(function () {
     const exponente = diferenciaDias / 360;
     const precioFinal = valor / Math.pow(factorTIR, exponente);
 
-    $("#investment_result").val(precioFinal.toFixed(2));
+    $("#investment_result").val("$"+num(precioFinal));
 
     // Calcular diferencia (ganancia neta)
     ganancia = valor - precioFinal;
@@ -75,7 +126,7 @@ $(document).ready(function () {
     margin = (ganancia) / (1 - (percent / 100))
     comission = margin - ganancia;
     // $("#calc_price_margin").val(margen.toFixed(2));
-    $("#price_result").val(num(valor - margin));
+    $("#price_result").val("$"+num(valor - margin));
 
     // Aplicar porcentaje ingresado (calc_price_percent) a calcular comisión y ganancia
     if (percent >= 0 && percent <= 100) {

@@ -21,14 +21,19 @@
     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
     <!-- JS -->
      <script src="assets/js/main.js"></script>
+     <script src="assets/js/dateDiff.js"></script>
+     <script src="assets/js/offerSlider.js"></script>
+     <!-- Descripción -->
+     <meta name="description" content="Calculadora financiera. Especializada para inversores y vendedores en el ámbito de descuento de cheques. Intuitiva y fácil de usar.  Una extensión de chequeado.uy">
 </head>
 
 <body>
     <section id="header">
-        <a href="#">Calculame ésta</a>
+        <a href="#" class="fw-6 fz-2">Calculame ésta</a>
     </section>
     <div class="content-all">
-        <div class="dg gtc-2 box-bg pad-05 br-5 gg-10 calc">
+        <!--  -->
+       <div class="dg gtc-2 box-bg pad-05 br-5 gg-10 calc">
             <div class="fz-1 gc-1-3 mar-05 border-bm-light pad-bm-05 mar-bm-05 color-primary fw-6">Calcular TIR</div>
             <div class="celda border-bm-light ">
                 <span class="color-placeholder fz-09">Fecha de compra</span>
@@ -61,7 +66,7 @@
             <input type="text" readonly class="fz-1-5 fw-6 ta-center gc-1-3 result" id="tir_neta_result" value="0%">
         </div>
 
-        <div class="dg gtc-2 box-bg pad-05 br-5 gg-10 mar-tp-1">
+        <div class="dg gtc-2 box-bg pad-05 br-5 gg-10 calc">
             <div class="fz-1 gc-1-3 mar-05 border-bm-light pad-bm-05 mar-bm-05 color-primary fw-6">Calcular precio de compra</div>
             <div class="celda border-bm-light ">
                 <span class="color-placeholder fz-09">Fecha de compra</span>
@@ -109,13 +114,45 @@
                 <span class="color-placeholder fz-09 ta-center db">Inversión neta</span>
             </div>
         </div>
-    </div><!-- end content-all -->
-    <div id="footer">
-        <div>
-            Copyright &reg; 2025. All right reserved. 
+       
+        <div class="dg gtc-2 box-bg pad-05 br-5 gg-10 calc" id="calculate_check_value">
+                <div class="fz-1 gc-1-3 mar-05 border-bm-light pad-bm-05 mar-bm-05 color-primary fw-6">Calcular valor del cheque</div>
+                <div class="celda border-bm-light ">
+                    <span class="color-placeholder fz-09">Fecha de venta</span>
+                    <input type="date" id="calc_check_value_buy_date" class="fz-1">
+                </div>
+                <div class="celda border-bm-light ">
+                    <span class="color-placeholder fz-09">Vencimiento</span>
+                    <input type="date" id="calc_check_value_expired" class="fz-1">
+                </div>
+                <div class="celda border-bm-light ">
+                    <span class="color-placeholder fz-09">Diferencia en días</span>
+                    <input type="number" step="1" id="calc_check_value_days" class="fz-1">
+                </div>
+                <div class="celda border-bm-light ">
+                    <span class="color-placeholder fz-09">Quiero recibir ($)</span>
+                    <input type="number" step="0.01" id="calc_check_value_requested" class="fz-1">
+                </div>
+                <div class="dg gtc-2 gg-10 gc-1-3">
+                    <span class="color-placeholder fz-09">Tasa mensual (%)</span>
+                    <input type="number" step="0.01" id="check_value_rate_monthly" class="fz-1 ta-right bg-transparent border-bm-light">
+                    <input type="range" class="gc-1-3" id="monthly_rate" min="0.01" max="5" step="0.01" value="1">
+                </div>
+
+                <div class="result gc-1-3">
+                    <input type="text" readonly class="fz-1-5 fw-6 ta-center gc-1-3 border-bm-light pad-05" id="calc_check_value_result" value="$0">
+                    <span class="color-placeholder fz-09 ta-center db">valor nominal del cheque</span>
+                </div>
+
+
+        
         </div>
-        <div>Desarrollado por: <b><a target="_blank" href="https://github.com/MartSolutions">Mart Solutions</a><b></div>
-    </div>
+    </div><!-- end content-all -->
+    <footer  >
+        <div>Copyright &reg; 2025. All right reserved. </div>
+        <div>Desarrollado por: <b><a target="_blank" href="https://github.com/MartinezK97">Kevin Martínez</a><b></div>
+    </footer>
+    
     
 </body>
 
