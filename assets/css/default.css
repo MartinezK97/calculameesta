@@ -113,7 +113,8 @@ a.icon{
 .calc{
     border-bottom:solid 1px #0002;
     margin-bottom:2rem;
-    max-width:130mm;
+    max-width:120mm;
+    width:100%;
     margin:0 auto 1rem;
 }
 
@@ -159,9 +160,7 @@ footer{
     grid-template-columns: repeat(2,1fr);
     margin:0;
     color:var(--placeholder);
-    width: calc(100vw - 1.2rem);
-    margin-left: -1rem;
-    margin-bottom: -0.75rem;
+    width:100%;
 }
 
 footer > div{
